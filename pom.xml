@@ -18,6 +18,8 @@
         <slf4jVersionAPI>2.0.13</slf4jVersionAPI>
         <log4jVersion>2.23.1</log4jVersion>
         <log4j-apiVersion>2.23.1</log4j-apiVersion>
+        <gsonversion>2.11.0</gsonversion>
+        <javafakerversion>1.0.2</javafakerversion>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -60,8 +62,18 @@
             <artifactId>log4j-api</artifactId>
             <version>${log4j-apiVersion}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gsonversion}</version>
+        </dependency>
 
-
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${javafakerversion}</version>
+        </dependency>
     </dependencies>
 
 </project>
