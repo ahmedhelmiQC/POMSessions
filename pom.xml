@@ -20,7 +20,26 @@
         <log4j-apiVersion>2.23.1</log4j-apiVersion>
         <gsonversion>2.11.0</gsonversion>
         <javafakerversion>1.0.2</javafakerversion>
+        <allureversion>2.28.1</allureversion>
+        <commons-io>2.16.1</commons-io>
+        <aspectj.version>1.9.20.1</aspectj.version>
     </properties>
+    <build>
+        <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.1.2</version>
+            <configuration>
+                <argLine>
+                    -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                </argLine>
+            </configuration>
+
+        </plugin>
+        </plugins>
+
+    </build>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
@@ -74,6 +93,26 @@
             <artifactId>javafaker</artifactId>
             <version>${javafakerversion}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allureversion}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io}</version>
+        </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+
+
     </dependencies>
 
 </project>
